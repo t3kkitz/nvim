@@ -30,9 +30,12 @@ if not status_ok then
 end
 
 return require('packer').startup(function()
+  
   -- Plugins
-  use 'wbthomason/packer.nvim'
-  use 'ggandor/lightspeed.nvim'
+  use 'asvetliakov/vim-easymotion'
+  use 'ggandor/leap.nvim'
+
+  require('leap').set_default_keymaps()
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
