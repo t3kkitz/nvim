@@ -29,12 +29,22 @@ if not status_ok then
   return
 end
 
-return require('packer').startup(function()
-  
-  -- Plugins
-  use 'asvetliakov/vim-easymotion'
-  use 'ggandor/leap.nvim'
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float()
+    end,
+  },
+}
 
+-- Install your plugins here
+return packer.startup(function(use)
+  -- My plugins here
+  use "wbthomason/packer.nvim" -- Have packer manage itself
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
   require('leap').set_default_keymaps()
 
   -- Automatically set up your configuration after cloning packer.nvim
