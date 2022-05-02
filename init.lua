@@ -1,4 +1,5 @@
 require 'keymaps'
 require 'plugins'
 require 'options'
-vim.cmd 'colorscheme onedarker'
+require 'colorscheme'
+require 'autocompletion'
