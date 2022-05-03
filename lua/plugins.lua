@@ -46,22 +46,29 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
   require('leap').set_default_keymaps()
- 
+
   -- Colorschemes
   use 'LunarVim/Colorschemes'
- 
+
   -- Autocompletion plugin
   use "hrsh7th/nvim-cmp" -- The completion plugin
-  -- Autocompletion extentions 
+
+  -- Autocompletion extentions
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp" -- A nvim-cmp source for Neovim builtin LSP client.
+  use "hrsh7th/cmp-nvim-lua" -- A nvim-cmp source for Neovim builtin LSP client.
 
   -- Snippet engines
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
- 
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
