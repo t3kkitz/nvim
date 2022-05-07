@@ -44,8 +44,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
-  require('leap').set_default_keymaps()
+  --  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
+  -- require('leap').set_default_keymaps()
 
   -- Colorschemes
   use 'LunarVim/Colorschemes'
@@ -89,31 +89,6 @@ return packer.startup(function(use)
       require('gitsigns').setup()
     end
   }
-
-  -- Comment
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup{
-          pre_hook = function(ctx)
-            local U = require "Comment.utils"
-
-            local location = nil
-            if ctx.ctype == U.ctype.block then
-              location = require("ts_context_commentstring.utils").get_cursor_location()
-            elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-              location = require("ts_context_commentstring.utils").get_visual_start_location()
-            end
-
-            return require("ts_context_commentstring.internal").calculate_commentstring {
-              key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
-              location = location,
-            }
-          end,
-      }
-    end
-  }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
