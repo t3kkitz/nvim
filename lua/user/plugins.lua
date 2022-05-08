@@ -46,13 +46,13 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   --  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
   -- require('leap').set_default_keymaps()
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
+
+  -- Bufferline
+  use 'akinsho/bufferline.nvim'
+  use 'moll/vim-bbye'
 
   -- Colorschemes
   use 'LunarVim/Colorschemes'
