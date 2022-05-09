@@ -69,3 +69,6 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- Formatting
+keymap("n", "<leader>f", ":Format<cr>", opts)
