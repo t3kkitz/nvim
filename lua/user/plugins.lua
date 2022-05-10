@@ -44,6 +44,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use 'lewis6991/impatient.nvim'
   use "akinsho/toggleterm.nvim"
   
   -- Colorschemes
@@ -73,7 +74,6 @@ return packer.startup(function(use)
   }
 --   --  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
 --   -- require('leap').set_default_keymaps()
-  -- use 'lewis6991/impatient.nvim'
 
 
 

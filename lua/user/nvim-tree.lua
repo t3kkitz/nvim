@@ -35,9 +35,9 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   auto_reload_on_write = true,
-  disable_netrw = false,
+  disable_netrw = true,
   hijack_cursor = false,
-  hijack_netrw = true,
+  hijack_netrw = false,
   hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
   open_on_setup = false,
@@ -46,7 +46,7 @@ nvim_tree.setup {
   sort_by = "name",
   update_cwd = false,
   view = {
-    width = 30,
+    width = 20,
     height = 30,
     hide_root_folder = false,
     side = "left",
@@ -57,7 +57,8 @@ nvim_tree.setup {
     mappings = {
       custom_only = false,
       list = {
-        -- user mappings go here
+        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+        { key = "h", cb = tree_cb "close_node" },
       },
     },
   },
