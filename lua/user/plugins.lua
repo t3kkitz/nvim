@@ -46,16 +46,20 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'lewis6991/impatient.nvim'
   use "akinsho/toggleterm.nvim"
-  
+
   -- Colorschemes
   use 'LunarVim/Colorschemes'
-  
+
+  -- Easymotion
+  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
+  require('leap').set_default_keymaps()
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}, {'kdheepak/lazygit.nvim'} }
   }
-  
+
   -- Bottom status line
   use 'nvim-lualine/lualine.nvim'
 
@@ -63,8 +67,7 @@ return packer.startup(function(use)
   use 'akinsho/bufferline.nvim'
   use 'moll/vim-bbye'
 
-
-  -- File tree 
+  -- File tree
   use 'kyazdani42/nvim-web-devicons'
   use {
       'kyazdani42/nvim-tree.lua',
@@ -73,58 +76,51 @@ return packer.startup(function(use)
       },
   }
 
-  -- Easymotion
-  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
-  require('leap').set_default_keymaps()
+  -- Autocompletion plugin
+  use "hrsh7th/nvim-cmp" -- The completion plugin
 
+  -- Snippet engine
+  use "L3MON4D3/LuaSnip"
 
+  -- Snippet collections
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp" -- A nvim-cmp source for Neovim builtin LSP client.
+  use "hrsh7th/cmp-nvim-lua" -- nvim-cmp source for neovim Lua API.
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
---   -- Autocompletion plugin
---   use "hrsh7th/nvim-cmp" -- The completion plugin
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use 'jose-elias-alvarez/null-ls.nvim' -- code linters and formatters
 
---   -- Autocompletion extentions
---   use "hrsh7th/cmp-buffer" -- buffer completions
---   use "hrsh7th/cmp-path" -- path completions
---   use "hrsh7th/cmp-cmdline" -- cmdline completions
---   use "saadparwaiz1/cmp_luasnip" -- snippet completions
---   use "hrsh7th/cmp-nvim-lsp" -- A nvim-cmp source for Neovim builtin LSP client.
---   use "hrsh7th/cmp-nvim-lua" -- A nvim-cmp source for Neovim builtin LSP client.
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use 'p00f/nvim-ts-rainbow'
 
---   -- Snippet engines
---   use "L3MON4D3/LuaSnip" --snippet engine
---   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+      config = function()
+      require('Comment').setup()
+    end
+  }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
---   -- LSP
---   use "neovim/nvim-lspconfig" -- enable LSP
---   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
---   use 'jose-elias-alvarez/null-ls.nvim' -- code linters and formatters
+  -- Autopairs
+  use 'windwp/nvim-autopairs'
 
---   -- Treesitter
---   use {
---     "nvim-treesitter/nvim-treesitter",
---     run = ":TSUpdate",
---   }
---   use 'p00f/nvim-ts-rainbow'
-
-
---   -- Autopairs
---   use 'windwp/nvim-autopairs'
-
---   use {
---     'lewis6991/gitsigns.nvim',
---     config = function()
---       require('gitsigns').setup()
---     end
---   }
-
---   -- Comment
---   use {
---     'numToStr/Comment.nvim',
---     config = function()
---       require('Comment').setup()
---     end
---   }
---   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
