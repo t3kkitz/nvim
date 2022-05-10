@@ -72,8 +72,10 @@ return packer.startup(function(use)
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
   }
---   --  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
---   -- require('leap').set_default_keymaps()
+
+  -- Easymotion
+  use 'ggandor/leap.nvim' -- EasyMotion text navigation plugin
+  require('leap').set_default_keymaps()
 
 
 
