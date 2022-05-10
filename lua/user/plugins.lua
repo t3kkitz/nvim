@@ -48,6 +48,7 @@ return packer.startup(function(use)
   -- require('leap').set_default_keymaps()
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  use "akinsho/toggleterm.nvim"
 
 
   -- Bufferline
@@ -102,7 +103,7 @@ return packer.startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
