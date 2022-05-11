@@ -62,9 +62,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
--- Formatting
-keymap("n", "<leader>f", ":Format<cr>", opts)
-
 -- Telescope
 keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<C-f>", "<cmd>Telescope live_grep<cr>", opts)
