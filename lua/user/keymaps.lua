@@ -65,6 +65,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- Telescope
 keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<C-f>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", ";;", "<cmd>Telescope help_tags<cr>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)

@@ -76,13 +76,9 @@ return packer.startup(function(use)
       },
   }
 
-  -- Autocompletion plugin
+  -- Autocompletion 
   use "hrsh7th/nvim-cmp" -- The completion plugin
-
-  -- Snippet engine
-  use "L3MON4D3/LuaSnip"
-
-  -- Snippet collections
+  use "L3MON4D3/LuaSnip" -- snippet engine
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
