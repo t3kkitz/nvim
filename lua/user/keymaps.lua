@@ -37,10 +37,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -60,7 +56,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Telescope
 keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
